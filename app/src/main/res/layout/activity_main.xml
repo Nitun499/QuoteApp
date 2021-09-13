@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="0dp"
+    android:background="@drawable/ib_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/quotify"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:fontFamily="@font/slabo_regular"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/quote_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleX="-1"
+            android:scaleY="-1"
+            app:tint = "#454545"
+            app:srcCompat="@drawable/ic_quote"/>
+        <TextView
+            android:id="@+id/quoteText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/Quote"
+            android:textColor="#454545"
+            android:textSize="24sp"
+            android:paddingLeft="10dp" />
+        <TextView
+            android:id="@+id/quoteAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/slabo_regular"
+            android:paddingLeft="10dp"
+            android:text="@string/QuoteAuthor"
+            android:textStyle="bold"
+            android:textColor="#454545"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/ic_left"
+            android:drawableLeft="@drawable/ic_left"
+            android:drawableTint="@color/white"
+            android:text="PREVIOUS"
+            android:onClick="previousQuote"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableEnd="@drawable/ic_right"
+            android:drawableRight="@drawable/ic_right"
+            android:drawableTint="@color/white"
+            android:text="NEXT"
+            android:onClick="nextQuote"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:gravity="end" />
+
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="#0288D1"
+        android:foregroundTint="@color/white"
+        android:clickable="true"
+        android:onClick="onShare"
+        app:srcCompat="@drawable/ic_share"
+        android:contentDescription="@string/submit"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/quote_layout"
+        app:layout_constraintEnd_toEndOf="@id/quote_layout"
+        app:layout_constraintBottom_toBottomOf="@id/quote_layout"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
